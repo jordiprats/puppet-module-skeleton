@@ -3,8 +3,10 @@
 The built-in puppet-module tool can be configured to use a custom template to
 generate new modules. By installing this the generated module will have:
 
-- **class.pp** and **params.pp** created
-- basic **rspec** and **beaker** support
+- **class.pp** and **params.pp** created with OS support checking already in place
+- basic support for
+  * **rspec** (checks for supported and unsupported OS)
+  * **beaker** (OS dependant variables and basic setup) 
 - **.gitignore** with common files to be ignored
 - **.fixtures.yml** with puppetlabs-stdlib
 - **Gemfile** for beaker testing

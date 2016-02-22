@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#TODO: the skeleton is working only for non-root users.
+
 case $(puppet --version) in
   3*)
     #~/.puppet/var/puppet-module/skeleton

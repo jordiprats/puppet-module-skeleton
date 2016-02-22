@@ -14,5 +14,4 @@ esac
 
 rm -fr ${INSTALLDIR}
 cp -pr skeleton ${INSTALLDIR}
-mv $(dirname $INSTALLDIR)/skeleton $(dirname $INSTALLDIR)/$(basename $INSTALLDIR)
 find ${INSTALLDIR} -iname .gitkeep -empty -delete

@@ -13,4 +13,5 @@ case $(puppet --version) in
 esac
 
 rm -fr ${INSTALLDIR}/*
-find skeleton -type f -not -name .gitkeep | git checkout-index --stdin --force --prefix=$INSTALLDIR
+cp -pr skeleton/* skeleton/.* ${INSTALLDIR}
+find ${INSTALLDIR} -iname .gitkeep -empty -delete

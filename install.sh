@@ -13,6 +13,11 @@ else
       ;;
   esac
 fi
+
+#mkdir per si no hi ha l'estructura
+mkdir -p ${INSTALLDIR}
+
+#netejem coses ja presents
 rm -fr ${INSTALLDIR}
 cp -pr skeleton ${INSTALLDIR}
 find ${INSTALLDIR} -iname .gitkeep -empty -delete

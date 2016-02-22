@@ -12,6 +12,6 @@ case $(puppet --version) in
     ;;
 esac
 
-rm -fr ${INSTALLDIR}/*
-cp -pr skeleton/* skeleton/.* ${INSTALLDIR}
+rm -fr ${INSTALLDIR}
+cp -pr skeleton ${INSTALLDIR}
 find ${INSTALLDIR} -iname .gitkeep -empty -delete

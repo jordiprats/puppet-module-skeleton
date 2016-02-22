@@ -1,5 +1,17 @@
 # puppet-module-skeleton
 
+The built-in puppet-module tool can be configured to use a custom template to
+generate new modules. By installing this the generated module will have:
+
+- **class.pp** and **params.pp** created
+- basic **rspec** and **beaker** support
+- **.gitignore** with common files to be ignored
+- **.fixtures.yml** with puppetlabs-stdlib
+- **Gemfile** for beaker testing
+- **Rakefile** with metadata-json-lint and disabled some annoying lint checks
+- **metadata.json** configured for CentOS 5,6,7 and Ubuntu 14.04 support
+- basic **README.md** template
+
 ## Install
 
 Run install.sh to install

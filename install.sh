@@ -2,11 +2,13 @@
 
 case $(puppet --version) in
   3*)
-    install_dir="$HOME/.puppet/var/puppet-module/"
+    #~/.puppet/var/puppet-module/skeleton
+    INSTALLDIR="/usr/lib/ruby/vendor_ruby/puppet/module_tool/skeleton/templates/generator"
     ;;
   4*)
-    install_dir="$HOME/.puppetlabs/opt/puppet/cache/puppet-module/"
+    INSTALLDIR="$HOME/.puppetlabs/opt/puppet/cache/puppet-module/"
     ;;
 esac
 
-find skeleton -type f -not -name .gitkeep | git checkout-index --stdin --force --prefix=$install_dir
+rm -fr ${INSTALLDIR}/*
+find skeleton -type f -not -name .gitkeep | git checkout-index --stdin --force --prefix=$INSTALLDIR

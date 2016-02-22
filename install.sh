@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#TODO: the skeleton is working only for non-root users.
-
 if [ "$(id -u)" -eq 0 ];
 then
   INSTALLDIR="/usr/lib/ruby/vendor_ruby/puppet/module_tool/skeleton/templates/generator"

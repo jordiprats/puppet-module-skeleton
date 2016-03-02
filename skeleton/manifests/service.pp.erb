@@ -2,11 +2,13 @@ class <%= metadata.name %>::service (
                         $manage_service=true,
                         $manage_docker_service=false,
                         $ensure ='running',
+                        $enable =true,
                       ) inherits <%= metadata.name %>::params {
 
   #
   validate_bool($manage_docker_service)
   validate_bool($manage_service)
+  validate_bool($enable)
 
   validate_re($ensure, [ '^running$', '^stopped$' ], "Not a valid daemon status: ${ensure}")
 

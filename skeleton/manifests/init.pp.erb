@@ -4,5 +4,9 @@
 #
 class <%= metadata.name %> inherits <%= metadata.name %>::params{
 
+  # service definition and notification:
+  #
+  # notify => Class['<%= metadata.name %>::service'],
+  # class { '<%= metadata.name %>::service': }
 
 }

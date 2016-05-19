@@ -18,6 +18,8 @@ generate new modules. By installing this the generated module will have:
 - **metadata.json** configured for CentOS 5,6,7 and Ubuntu 14.04 support
 - basic **README.md** template
 
+Example module: [eyp-ntp](https://github.com/NTTCom-MS/eyp-ntp)
+
 ## Install
 
 Run install.sh to install

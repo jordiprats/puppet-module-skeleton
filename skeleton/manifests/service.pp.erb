@@ -15,7 +15,10 @@ class <%= metadata.name %>::service inherits <%= metadata.name %> {
   {
     if($<%= metadata.name %>::manage_service)
     {
-      #service or exec here
+      service { $<%= metadata.name %>::params::service_name:
+        ensure => $<%= metadata.name %>::service_ensure,
+        enable => $<%= metadata.name %>::service_enable,
+      }
     }
   }
 }

@@ -11,6 +11,8 @@ class <%= metadata.name %>(
                             $service_enable        = true,
                           ) inherits <%= metadata.name %>::params{
 
+  validate_re($package_ensure, [ '^present$', '^installed$', '^absent$', '^purged$', '^held$', '^latest$' ], 'Not a supported package_ensure: present/absent/purged/held/latest')
+
   class { '::<%= metadata.name %>::install': } ->
   class { '::<%= metadata.name %>::config': } ~>
   class { '::<%= metadata.name %>::service': } ->

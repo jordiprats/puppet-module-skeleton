@@ -6,10 +6,9 @@ class <%= metadata.name %>::install inherits <%= metadata.name %> {
 
   if($<%= metadata.name %>::manage_package)
   {
-    # package here, for example: 
-    #package { $<%= metadata.name %>::params::package_name:
-    #  ensure => $<%= metadata.name %>::package_ensure,
-    #}
+    package { $<%= metadata.name %>::params::package_name:
+      ensure => $<%= metadata.name %>::package_ensure,
+    }
   }
 
 }

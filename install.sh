@@ -1,5 +1,13 @@
 #!/bin/bash
 
+PUPPETBIN=$(which puppet 2>/dev/null)
+
+if [ -z "$PUPPETBIN" ];
+then
+	echo "puppet not found"
+	exit 1
+fi
+
 if [ "$(id -u)" -eq 0 ];
 then
   INSTALLDIR="/usr/lib/ruby/vendor_ruby/puppet/module_tool/skeleton/templates/generator"

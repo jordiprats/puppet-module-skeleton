@@ -4,20 +4,27 @@ PUPPETBIN=$(which puppet 2>/dev/null)
 
 if [ -z "$PUPPETBIN" ];
 then
-	echo "puppet not found"
-	exit 1
+  echo "puppet not found"
+  exit 1
 fi
 
 if [ "$(id -u)" -eq 0 ];
 then
-  INSTALLDIR="/usr/lib/ruby/vendor_ruby/puppet/module_tool/skeleton/templates/generator"
+  case $(puppet --version) in
+    3*)
+      INSTALLDIR="/usr/lib/ruby/vendor_ruby/puppet/module_tool/skeleton/templates/generator"
+      ;;
+    4)
+      INSTALLDIR="/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/puppet/module_tool/skeleton/templates/generator"
+      ;;
+  esac
 else
   case $(puppet --version) in
     3*)
       INSTALLDIR="$HOME/.puppet/var/puppet-module/skeleton"
       ;;
     4*)
-      INSTALLDIR="$HOME/.puppetlabs/opt/puppet/cache/puppet-module/"
+      INSTALLDIR="$(puppet apply --configprint module_working_dir)"
       ;;
   esac
 fi

@@ -30,6 +30,9 @@ else
     4*)
       INSTALLDIR="$(puppet apply --configprint module_working_dir)"
       ;;
+    5*)
+      INSTALLDIR="$(puppet apply --configprint module_working_dir)"
+      ;;
   esac
 fi
 

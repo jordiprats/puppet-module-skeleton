@@ -2,6 +2,10 @@
 
 PUPPETBIN=$(which puppet 2>/dev/null)
 
+REALPATH=$(echo "$(cd "$(dirname "$0")"; pwd)/$(basename "$0")")
+BASEDIR=$(dirname ${REALPATH})
+BASENAME=$(basename ${REALPATH})
+
 if [ -z "$PUPPETBIN" ];
 then
   PUPPETBIN=$(find /opt/puppetlabs/ -iname puppet -type f 2>/dev/null | grep bin/puppet)
@@ -47,5 +51,5 @@ mkdir -p ${INSTALLDIR}
 
 #netejem coses ja presents
 rm -fr ${INSTALLDIR}
-cp -pr skeleton ${INSTALLDIR}
+cp -pr ${BASEDIR}/skeleton ${INSTALLDIR}
 find ${INSTALLDIR} -iname .gitkeep -empty -delete
